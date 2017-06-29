@@ -1,0 +1,47 @@
+Make: <%= @car.make %>
+<br/>
+Year: <%= @car.model_year %>
+<br/>
+Speed: <%= @car.speed %>Km/h
+<br/>
+Lights: <%= @car.lights %>
+<br>
+
+<form action="accelerate" method="get">
+  <input type="submit" value="Accelerate" id = "accelerate">
+</form>
+
+<form action="brake" method="get">
+  <input type="submit" value="Brake">
+</form>
+
+<form action="lights" method="get">
+  <input type="submit" value="Simulate Car">
+</form>
+
+<form action="lights" method="get">
+  <input type="submit" value="Lights">
+</form>
+
+<form action="create" method="get">
+  <input id = "set" type="radio" name="pb" value="set" onclick="check()" /><label for="set" >Set</label>
+  <input id = "release" type="radio" name="pb" value="release" onclick="check()"/><label for="release">Release</label>
+  <input type="submit" value="parking brake"/>
+</form>
+
+<script type="text/javascript">
+console.log("started")
+function check() {
+  var checkbox = document.getElementById('set').checked
+  if( checkbox === true){
+     document.getElementById('accelerate').setAttribute('disabled','');
+     console.log("got here");
+  } else {
+    document.getElementById('accelerate').removeAttribute('disabled','');
+  }
+}
+//
+// if ($(document.getElementById("set").prop('checked')){
+//   document.getElementById("accelerate").disabled === true;
+// };
+</script>
